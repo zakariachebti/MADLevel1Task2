@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.level1_task2.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val truee = "Tt"
+    private val falsee = "Ff"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +24,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun submit() {
-
+        if( truee.contains(binding.AB1.text) && falsee.contains(binding.AB2.text) &&
+            falsee.contains(binding.AB3.text) && falsee.contains(binding.AB4.text) )
+            onAnswerCorrect()
+        else onAnswerIncorrect()
     }
 
     /**
